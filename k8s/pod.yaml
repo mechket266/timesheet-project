@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: timesheet-pod
+  labels:
+    app: timesheet
+spec:
+  containers:
+  - name: timesheet
+    image: timesheet-mechket968/timesheet-mechketmlayeh-esprit
+    ports:
+    - containerPort: 8082

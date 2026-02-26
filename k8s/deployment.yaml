@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+meta
+  name: timesheet-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timesheet
+  template:
+    meta
+      labels:
+        app: timesheet
+    spec:
+      containers:
+      - name: timesheet
+        image: timesheet-mechket968/timesheet-mechketmlayeh-esprit
+        ports:
+        - containerPort: 8082
