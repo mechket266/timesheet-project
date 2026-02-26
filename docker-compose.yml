@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: mysql-timesheet
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: timesheet
+    ports:
+      - "3306:3306"
+    volumes:
+      - timesheetvol:/var/lib/mysql
+
+  timesheet:
+    image: timesheet-mechket968/timesheet-mechketmlayeh-esprit
+    container_name: timesheet-app
+    build: .
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/timesheet?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root123
+
+volumes:
+  timesheetvol:
