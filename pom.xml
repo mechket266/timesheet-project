@@ -16,6 +16,12 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+                <sonar.login>squ_011c3240f81d43680f056ea03c2cddb77d52f0ee</sonar.login>
+                <sonar.projectKey>timesheet-project</sonar.projectKey>
+                <sonar.projectName>Timesheet DevOps Project</sonar.projectName>
+                <sonar.sources>src/main/java</sonar.sources>
+                <sonar.java.binaries>target/classes</sonar.java.binaries>
 	</properties>
 	<dependencies>
 		<dependency>
