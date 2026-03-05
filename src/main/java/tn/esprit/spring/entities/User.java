@@ -89,8 +89,11 @@ public class User implements Serializable {
     }
 
     public String getLastName() {
-        return lastName;
+    if (lastName != null) {
+        return lastName + "-v1";
     }
+    return lastName;
+}
 
     public void setLastName(String lName) {
         this.lastName = lName;
